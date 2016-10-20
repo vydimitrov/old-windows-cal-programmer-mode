@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calc</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style/calc-styles.css">
+    </head>
+    <body>
+        <div id="main-wrap">
+            <div id="image">
+                <div class="position">
+                    <img src="img/calc.png" />
+                    <div>Calculator</div>
+                </div>
+            </div>
+            <div id="windows-button">
+                <div id="close-button">
+                    <img src="img/close.png" width="12" />
+                </div>
+                <div id="max-button" class="top-buttons">
+                    <img src="img/max.png" width="12" />
+                </div>
+                <div id="min-button" class="top-buttons">
+                    <img src="img/min.png" width="12" />
+                </div>
+            </div>
+            <div id="con-wrap">
+                <div id="nav">
+                    <ul>
+                        <li><a href="#">View</a>
+                                <ul>
+                                    <li class="side-submenu">
+                                        <a href="#"><img src="img/check.png"/></a>
+                                        <a href="#"><img src="img/check.png"/></a>
+                                    </li>
+                                    <li><a href="#">Standard<span>Alt+1</span></a></li>
+                                    <li><a href="#">Scitific<span>Alt+2</span></a></li>
+                                    <li><a href="#">Programmer<span>Alt+3</span></a></li>
+                                    <li><a href="#">Statistics<span>Alt+4</span></a></li>
+                                    <li><a href="#">History<span>Ctrl+H</span></a></li>
+                                    <li><a href="#">Digital gouping</a></li>
+                                    <li><a href="#">Basic<span>Ctrl+F4</span></a></li>
+                                    <li><a href="#">Unit conversion<span>Ctrl+U</span></a></li>
+                                    <li><a href="#">Data colculation<span>Ctrl+E</span></a></li>
+                                    <li><a href="#">Worksheets<span class="arrow"></span></a></li>
+                                </ul>
+                        </li>
+                        <li><a href="#">Edit</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+                <div id="display">
+                    <div>0</div>
+                </div>
+                <div id="digits">
+                    <div id="left-digits">
+                        <div class="cleare-fix">
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                        </div>
+                        <div class="cleare-fix">
+                            <span class="big">63</span>
+                        </div>
+                        <div class="cleare-fix">
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                        </div>
+                        <div><span class="big cleare-fix">31</span></div>
+                    </div>
+                    <div id="right-digits">
+                        <div class="float-right">
+                            <div>
+                               <span>0000</span>
+                               <span>0000</span>
+                               <span>0000</span>
+                               <span>0000</span>
+                            </div>
+                           <div class="cleare-fix">
+                               <span class="big">47</span>
+                               <span class="big float-right">32</span>
+                           </div>
+                           <div>
+                               <span>0000</span>
+                               <span>0000</span>
+                               <span>0000</span>
+                               <span>0000</span>
+                           </div>
+                           <div class="cleare-fix">
+                               <span class="big ">15</span>
+                               <span class="big float-right">0</span>
+                           </div>
+                        </div>    
+                    </div>
+                </div>
+                <div id="aside-button-wrap">
+                    <div id="aside-menu">
+                        <div class="select-menu">
+                            <form>
+                                <input type="radio" name="system" checked/><span>Hex</span><br/>
+                                <input type="radio" name="system" /><span>Dec</span><br/>
+                                <input type="radio" name="system" /><span>Oct</span><br/>
+                                <input type="radio" name="system" /><span>Bin</span>
+                            </form>
+                        </div>
+                        <div class="select-menu">
+                            <form>
+                                <input type="radio"  name="type" checked/><span>Qword</span><br/>
+                                <input type="radio" name="type" /><span>Dword</span><br/>
+                                <input type="radio" name="type" /><span>Word</span><br/>
+                                <input type="radio" name="type" /><span>Byte</span>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="keyboard">
+                        <div class="empty">
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">Mod</a>
+                        </div>
+                        <div class="empty big-letter"><a>A</a>
+                        </div>
+                        <div class="button"><a href="#">MC</a>
+                        </div>
+                        <div class="button"><a href="#">MR</a>
+                        </div>
+                        <div class="button"><a href="#">MS</a>
+                        </div>
+                        <div class="button"><a href="#">M+</a>
+                        </div>
+                        <div class="button"><a href="#">M-</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">(</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">)</a>
+                        </div>
+                        <div class="empty big-letter"><a>B</a>
+                        </div>
+                        <div class="button big-arrow button-color-gradient"><a href="#"><b>&larr;</b></a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">CE</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">C</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">&#177</a>
+                        </div>
+                        <div class="empty"><a>&radic;</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">RoL</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">RoR</a>
+                        </div>
+                        <div class="empty big-letter"><a>C</a>
+                        </div>
+                        <div class="button big-letter button-color-white"><a href="#">7</a>
+                        </div>
+                        <div class="button big-letter button-color-white"><a href="#">8</a>
+                        </div>
+                        <div class="button big-letter button-color-white"><a href="#">9</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">/</a>
+                        </div>
+                        <div class="empty"><a>%</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">Or</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">Xor</a>
+                        </div>
+                        <div class="empty big-letter"><a>D</a>
+                        </div>
+                        <div class="button big-letter button-color-white"><a href="#">4</a>
+                        </div>
+                        <div class="button big-letter button-color-white"><a href="#">5</a>
+                        </div>
+                        <div class="button big-letter button-color-white"><a href="#">6</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">*</a>
+                        </div>
+                        <div class="empty"><a>1/x</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">Lsh</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">Rsh</a>
+                        </div>
+                        <div class="empty big-letter"><a>E</a>
+                        </div>
+                        <div class="button big-letter button-color-white"><a href="#">1</a>
+                        </div>
+                        <div class="button big-letter button-color-white"><a href="#">2</a>
+                        </div>
+                        <div class="button big-letter button-color-white"><a href="#">3</a>
+                        </div>
+                        <div class="button button-color-gradient" id="button-minus"><a href="#">-</a>
+                        </div>
+                        <div class="button button-color-gradient" id="button-equal"><a href="#">=</a>
+                        </div>  
+                        <div class="button button-color-gradient"><a href="#">Not</a>
+                        </div>
+                        <div class="button button-color-gradient"><a href="#">And</a>
+                        </div>
+                        <div class="empty big-letter"><a>F</a>
+                        </div>
+                        <div class="button big-letter button-color-white" id="button-zero"><a href="#">0</a>
+                        </div>
+                        <div class="empty">.
+                        </div>
+                        <div class="button button-color-gradient" id="button-plus"><a href="#">+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

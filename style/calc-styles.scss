@@ -1,0 +1,523 @@
+html, body, div, span, p, a, img, ul, li, form {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* -- SASS Elements - Mixins, etc. --*/
+
+@mixin four-value-gradient ($color-one, $color-two, $color-three, $color-four, $position-one, $position-two, $position-three, $position-four){
+    background: $color-one; /* Old browsers */
+    background: -moz-linear-gradient(top,  $color-one $position-one, $color-two $position-two, $color-three $position-three, $color-four $position-four); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop($position-one,$color-one), color-stop($position-two,$color-two), color-stop($position-three,$color-three), color-stop($position-four,$color-four)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $color-one $position-one,$color-two $position-two,$color-three $position-three,$color-four $position-four); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $color-one $position-one,$color-two $position-two,$color-three $position-three,$color-four $position-four); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $color-one $position-one,$color-two $position-two,$color-three $position-three,$color-four $position-four); /* IE10+ */
+    background: linear-gradient(to bottom,  $color-one $position-one,$color-two $position-two,$color-three $position-three,$color-four $position-four); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color-one}', endColorstr='#{$color-four}' ,GradientType=0 ); /* IE6-9 */
+}
+
+@mixin three-value-gradient ($color-one, $color-two, $color-three, $position-one, $position-two, $position-three){
+    background: $color-one; /* Old browsers */
+    background: -moz-linear-gradient(top,  $color-one $position-one, $color-two $position-two, $color-three $position-three); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop($position-one,$color-one), color-stop($position-two,$color-two), color-stop($position-three,$color-three)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $color-one $position-one,$color-two $position-two,$color-three $position-three); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $color-one $position-one,$color-two $position-two,$color-three $position-three); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $color-one $position-one,$color-two $position-two,$color-three $position-three); /* IE10+ */
+    background: linear-gradient(to bottom,  $color-one $position-one,$color-two $position-two,$color-three $position-three); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color-one}', endColorstr='#{$color-three}',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin two-value-gradient ($color-one, $color-two, $position-one, $position-two){
+    background: $color-one; /* Old browsers */
+    background: -moz-linear-gradient(top,  $color-one $position-one, $color-two $position-two); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop($position-one,$color-one), color-stop($position-two,$color-two)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $color-one $position-one,$color-two $position-two); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $color-one $position-one,$color-two $position-two); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $color-one $position-one,$color-two $position-two); /* IE10+ */
+    background: linear-gradient(to bottom,  $color-one $position-one,$color-two $position-two); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color-one}', endColorstr='#{$color-two}',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin windows-buttons-img ($top-position){
+    position: relative;
+    top: $top-position;
+    transform: translateY(-50%);
+}
+
+@mixin vendor-prefix($name, $argument...) {
+  -webkit-#{$name}: $argument;
+  -ms-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+  -o-#{$name}: $argument;
+  #{$name}: $argument;
+}
+
+.cleare-fix:before, .cleare-fix:after {
+  content: "";
+  display: table;
+}
+.cleare-fix:after {
+  clear: both;
+}
+.cleare-fix {
+  clear: both;
+  *zoom: 1;
+}
+
+%digits-position {
+    position:relative;
+    width:50%;
+    height: 100%;
+}
+
+   /* --- STYLES ---*/
+   
+body {
+   font-family: arial, verdana, tahoma;
+   font-size: 16px;
+}
+   
+#main-wrap {
+    position: relative;
+    width: 424px;
+    height: 390px;
+    margin: 0 auto;
+    top: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    @include vendor-prefix (box-shadow, 0 0 20px black);
+    @include vendor-prefix (box-sizing, border-box);
+    @include four-value-gradient (rgba(185,220,252,0.5), rgba(239,246,253,0.5), rgba(184,219,253,0.5), rgba(184,219,253,0.5), 1%, 30%, 32%, 100%);
+}   
+
+#image{
+    height: 26px;
+    margin-left:10px;
+    margin-top: 5px;
+    
+    .position{
+        position: relative;
+        top:50%;
+        transform: translateY(-50%);
+        
+        &>div {
+            position: absolute;
+            font-size:0.8em;
+            top:2px;
+            left:20px;
+        }
+    }
+}
+
+#windows-button {
+    text-align: center;
+    
+    .top-buttons{
+        position: absolute;
+        top: -1px;
+        width: 28px;
+        height: 20px;
+        border: 1px solid #5a5858;
+    }
+    
+    #close-button{
+    position: absolute;
+    right: 7px;
+    top: -1px;
+    width: 42px;
+    height: 20px;
+    border: 1px solid #5a5858;
+    @include vendor-prefix(border-bottom-right-radius, 5px);
+    @include two-value-gradient(rgb(240,172,163), rgb(202,120,103), 32%, 62%);
+    
+        img{
+            @include windows-buttons-img (40%);    
+        }
+        
+        &:hover{
+            box-shadow: 0 0 15px red;
+            z-index: 1;
+        }
+    }
+    
+    #min-button{
+        right: 75px;
+        border-bottom-left-radius: 5px;
+        @include two-value-gradient(rgb(229,239,249), rgb(172,191,213), 32%, 62%);
+        
+        img{
+            @include windows-buttons-img (15%); 
+        }
+        
+        &:hover{
+            box-shadow: 0 0 15px rgb(29,115,167);
+        }
+    }
+    
+    #max-button{
+        right: 48px;
+        @include two-value-gradient(rgb(229,239,249), rgb(183,200,223), 32%, 62%);
+        
+        img{
+            @include windows-buttons-img (32%); 
+        }
+    }
+
+    
+}
+
+
+#con-wrap{
+    position: relative;
+    width: 410px;
+    height: 350px;
+    margin: 0 auto;
+    border: 1px solid #5d6c7a;
+    @include vendor-prefix (box-sizing, border-box);
+    @include four-value-gradient (rgba(222,234,249,0.6), rgba (227,236,247,0.6), rgba(217,228,241, 0.6), rgba (217,228,241,0.6), 1%, 16%, 28%, 100%);
+}
+
+#nav{
+    width: 100%;
+    height: 19px;
+    line-height: 18px;
+    border-bottom: 1px solid #8e9cad;
+    @include three-value-gradient (#f6f8fc, #d7def0, #e0e5f5, 0%, 47%, 100%);
+    
+    &>ul {
+        margin-left: 5px;
+        
+        &>li {
+            display: inline-block;
+            position: relative;
+            width: 30px;
+            font-size: 0.72em;
+            text-align: center;
+
+            ul {
+                display: none;
+                position: absolute;
+                top: 18px;
+                left: -5px;
+                width: 200px;
+                text-align: left;
+                padding-left: 30px;
+                background-color: #F1F1F1;
+                border: 1px solid darkgray;
+                box-shadow: 5px 5px 5px darkgray;
+                z-index: 999;
+                
+                .side-submenu{
+                    position: absolute;
+                    left:5px;
+                    border-right: 1px solid white;
+                    height: 100%;
+                    width: 25px;
+                    
+                    img {
+                        width: 20px;
+                    }
+                    
+                    a{
+                        display: block;
+                        margin-top: 47px;
+
+                        &+a{
+                            margin-top: 65px;
+                        }
+                    }
+                }
+                
+                li {
+                    height: 2em;
+                    line-height: 2em;   
+                    
+                    &:not(.side-submenu){
+                        padding-left: 5px;
+                    }    
+                    
+                    a{
+                        font-weight: 500;
+                        span {
+                            float: right;
+                            margin-right: 20px;
+                        }
+                        
+                        .arrow{
+                            display: inline-block;
+                            position: absolute;
+                            right: -10px;
+                            bottom: 7px;
+                            width: 0; 
+                            height: 0;
+                            border-top: 4px solid transparent;
+                            border-bottom: 4px solid transparent; 
+                            border-left: 4px solid #000; 
+                        }
+                    }
+                    
+                    &:nth-of-type(5) {
+                        border-bottom: 1px solid white;
+                    }
+                    
+                    &:nth-of-type(6) a{
+                        color: grey;
+                    }
+                    
+                    &:nth-of-type(7) {
+                        border-bottom: 1px solid white;
+                    }
+                }
+            }
+            
+            &:hover {
+                &>a{
+                    border:1px solid #ABAFB7;
+                    border-radius: 3px;
+                    padding: 0 2px;
+                    
+                    &+ul{
+                        display: block;
+                    }
+                }
+            }
+            
+            a {
+                color: #000; 
+                cursor: default;
+            }
+            &>a {
+                display: inline-block;
+                &:first-letter{
+                    text-decoration: underline;
+                }
+            }
+            
+        }
+    }
+}
+
+#display {
+    position: absolute;
+    left:10px;
+    right:10px;
+    top:30px;
+    height: 48px;
+    line-height: 46px;
+    border: 1px solid #8e9cad;
+    @include vendor-prefix (box-sizing, border-box);
+    @include two-value-gradient(#deeaf9, #feffff, 1%, 100%);
+    
+    div {
+        float: right;
+        margin-right: 5px;
+        font-size: 1.4em;
+    }
+}
+
+
+#digits{
+    position: absolute;
+    left:10px;
+    right:10px;
+    top:83px;
+    height: 60px;
+    border: 1px solid #8e9cad;
+    @include vendor-prefix (box-sizing, border-box);
+    @extend .cleare-fix;
+    
+    span {
+        font-size: 0.7em;
+        height: 0.7em;
+        line-height: 0.7em;
+        color: #002a5e;
+    }
+    
+    #left-digits{
+        @extend %digits-position;
+        float: left;
+        span{
+            display: block;
+            margin: 3px 9px;
+            float: left;
+            letter-spacing: 1px;
+        }
+    }
+    
+    #right-digits{
+        @extend %digits-position;
+        float: right;
+        
+        span{
+            display: block;
+            margin: 3px 9px;
+            float: left;
+            letter-spacing: 1px;
+        }
+        
+        .float-right{
+            float: right;   
+        }
+    }
+    
+    .big{  
+        display: block;
+        font-size: 0.75em;
+        margin-top:0;
+        margin-bottom: 0;
+        height: 0.8em;
+        line-height: 0.8em;
+        color: #5d6c7a;
+    }
+     
+}
+
+#aside-button-wrap{
+    position: absolute;
+    left:10px;
+    right:10px;
+    bottom:10px;
+    top:148px;  
+    
+    #aside-menu{
+        float: left;
+        width:19.5%;
+        @include vendor-prefix(display, flex);
+        @include vendor-prefix(flex-flow, column wrap);
+        @include vendor-prefix(justify-content, flex-start);
+        
+        .select-menu{
+            position: relative;
+            width:95%;
+            height: 89px;
+            margin-bottom:5.5px;
+            border: 1px solid #8e9cad;
+            border-radius: 2px;
+            
+            form{
+                font-size:0.7em;
+                color: #002a5e;
+                position: relative;
+                top:50%;
+                transform: translateY(-50%);
+                
+                input{
+                    vertical-align: -10%;
+                    display: inline-block;
+                    margin: 4px 4px;
+                    padding: 0;
+                } 
+            }
+        }
+    }
+}
+
+
+#keyboard{
+    position: relative;
+    float:right;
+    width:80.5%;
+    cursor: default;
+    @include vendor-prefix(display, flex);
+    @include vendor-prefix(flex-flow, row wrap);
+    @include vendor-prefix(justify-content, flex-end);
+
+    .empty{
+        width:35px;
+        height:27.1px;
+        margin: 0 0 5px 4px;
+        text-align: center;
+        line-height:25px;
+        border:1px solid #b4c2d1;
+        box-sizing: border-box;
+        border-radius: 2px;
+    }
+    
+    .big-letter{
+        a{
+            font-size: 1em;
+        }
+    }
+    
+    #button-zero{
+        width:74px;
+    }
+    
+    #button-equal{
+        height: 60px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 1.4em;
+        font-weight: 700;
+    }
+   
+    #button-minus{
+        margin-right: 39px;
+    }
+
+    #button-plus{
+        margin-right: 39px;
+    }
+    
+    .big-arrow a{
+        font-size: 1.5em;
+        font-weight: 800;
+        top: 40%;
+    }
+    
+    a, #empty a{
+        display: inline-block;
+        position: relative;
+        top: 47%;
+        transform: translateY(-50%);
+        font-size: 0.75em;
+        font-family: arial;
+        text-decoration: none;
+        color: #002a5e;
+        cursor: default;
+    }
+   
+}
+
+.button-color-gradient{
+    @include two-value-gradient(#f0f6fb, #d6e1ef, 32%, 56%);
+}
+
+.button-color-white {
+    @include two-value-gradient(#f7fbff, #f0f9fd, 33%, 54%);
+}
+   
+.button{
+    width:35px;
+    height:27.1px;
+    margin: 0 0 5px 4px;
+    text-align: center;
+    line-height:25px;
+    border:1px solid #8e9cad;
+    border-radius: 2px;
+    background-color: transparent;
+    @include vendor-prefix(box-sizing, border-box);
+
+    &:hover{
+        border-color: orange;
+        @include two-value-gradient(#ffead2, #ffd477, 46%, 53%);
+    }
+}
+
+
+
+
+
